@@ -24,16 +24,18 @@ $hoursTo: 18;
 }
 
 .reservation {
-  border-radius: .3rem;
+  border-radius: .5rem;
   box-sizing: border-box;
+  box-shadow: 0 0px 0px 0px #777;
   cursor: pointer;
   color: #fff;
   width: 100%;
   position: absolute;
   top: 0;
   z-index: 3;
-  transition: .2s all;
+  transition: .4s all;
   &:hover {
+    box-shadow: 0 10px 20px -17px #777;
     transform: scale(1.05);
   }
   .reservation-description {
