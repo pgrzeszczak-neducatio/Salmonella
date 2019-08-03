@@ -1,0 +1,31 @@
+.salmonella {
+  padding-top: 2rem;
+}
+.main-header {
+  overflow: auto;
+  .logo {
+    background: url(../assets/logo.png) no-repeat;
+    font-size: 3rem;
+    font-weight: 800;
+    float: left;
+    padding: 5rem 4rem;
+    text-transform: uppercase;
+    h4 {
+      font-weight: 500;
+      font-size: 1.5rem;
+      padding-top: 1rem;
+      position: relative;
+      margin: 0;
+      text-transform: none;
+      &:after {
+        background: #ffd060;
+        bottom: -3rem;
+        content: "";
+        height: 1rem;
+        left: 0;
+        position: absolute;
+        width: 3rem;
+      }
+    }
+  }
+}

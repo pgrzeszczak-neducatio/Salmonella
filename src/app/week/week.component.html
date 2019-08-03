@@ -1,0 +1,8 @@
+<div class="week">
+  <div class="day-slot-labels">
+    <div class="day-slot-label" *ngFor="let slot of slots">
+      {{slot.hour}}
+    </div>
+  </div>
+  <day *ngFor="let day of days" [day]="day" [slots]="slots"></day>
+</div>

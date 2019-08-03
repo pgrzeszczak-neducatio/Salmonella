@@ -1,0 +1,64 @@
+$hoursFrom: 7;
+$hoursTo: 18;
+
+@mixin reservation-lasts {
+  @for $j from 1 through 32 {
+    .reservation-lasts-#{$j} { 
+      height: $j * 1.5rem;
+    }
+  }
+}
+
+@mixin reservation-starts {
+  @for $i from $hoursFrom through $hoursTo {
+    .reservation-starts-#{$i}00 { 
+      top: ($i - $hoursFrom) * 6rem;
+    }
+    @for $j from 1 through 3 {
+      $k: $j*15;
+      .reservation-starts-#{$i}#{$k} { 
+        top: (($i - $hoursFrom) * 6rem) + ($j * 1.5rem);
+      }
+    }
+  }
+}
+
+.reservation {
+  border-radius: .3rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  transition: .2s all;
+  &:hover {
+    transform: scale(1.05);
+  }
+  .reservation-description {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+  }
+  h6 {
+    font-weight: 800;
+  }
+  h6, p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  &.color-1 {
+    background: #d44c85;
+  }
+  &.color-2 {
+    background: #46c59d;
+  }
+  &.color-3 {
+    background: #ffd060;
+    color: #000;
+  }
+}
+
+@include reservation-starts;
+@include reservation-lasts;

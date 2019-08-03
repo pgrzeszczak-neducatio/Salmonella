@@ -1,0 +1,20 @@
+$cell-size: 3rem;
+
+.day-header {
+  background: #fff;
+  border-bottom: 1px solid #eeeeee;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  height: 3rem;
+}
+
+.day-column {
+  position: relative;
+}
+
+.day-row {
+  height: 6rem;
+  border-bottom: 1px solid #eeeeee;
+  z-index: 1;
+}

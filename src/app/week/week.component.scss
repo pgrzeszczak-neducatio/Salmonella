@@ -1,0 +1,21 @@
+.week {
+  display: flex;
+   day {
+    flex: 2;
+    &:nth-child(even) {
+      background: #fafafa;
+    }
+   }
+   .day-slot-labels {
+     font-size: 1rem;
+     font-weight: 700;
+     box-sizing: border-box;
+     text-align: right;
+     width: 4rem;
+     padding-right: 1rem;
+     padding-top: 2.2rem;
+     .day-slot-label {
+      height: 6rem;
+     }
+   }
+}
