@@ -14,7 +14,11 @@ $cell-size: 3rem;
 }
 
 .day-row {
-  height: 6rem;
   border-bottom: 1px solid #eeeeee;
+  cursor: pointer;
+  height: 6rem;
   z-index: 1;
+  &:hover {
+    background: #f5f5f5;
+  }
 }

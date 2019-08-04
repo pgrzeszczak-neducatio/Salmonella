@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ReservationsService } from '../../services/reservations.service';
@@ -11,24 +11,27 @@ import { Color } from '../../models/color.model';
   styleUrls: ['./new-reservation-modal.component.scss']
 })
 export class NewReservationModalComponent implements OnInit {
-
+  @Input() public reservation: any = {};
   public addNewForm: FormGroup;
   public availableDays: Day[] = [];
   public hours: string[] = [];
   public colors: Color[] = [];
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, public reservationsService: ReservationsService) {
-    this.addNewForm = this.formBuilder.group({
+
+  }
+
+  ngOnInit() {
+    let defaults = {
       day: null,
       hour: '8:00',
       lasts: 4,
       owner: '',
       name: '',
-      color: 'color-1'
-    });
-  }
-
-  ngOnInit() {
+      color: 'color-1',
+      ...this.reservation
+    }
+    this.addNewForm = this.formBuilder.group(defaults);
     this.reservationsService.fetchAvailableDays()
       .subscribe(days => {
         this.availableDays = days;

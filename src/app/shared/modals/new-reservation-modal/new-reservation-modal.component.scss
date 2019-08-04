@@ -1,8 +1,9 @@
 .colorPreview {
-  width: 10px;
-  height: 10px;
+  border-radius: 50%;
+  width: 0.7rem;
+  height: 0.7rem;
   display: inline-block;
-
+  margin-right: 0.6rem;
   &.color-1 {
     background: #d44c85;
   }
@@ -11,5 +12,53 @@
   }
   &.color-3 {
     background: #ffd060;
+  }
+}
+
+.close {
+  outline: none;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+.modal-header, .modal-footer, .modal-body {
+  padding: 2rem;
+}
+
+.modal-body {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    .form-group {
+      box-sizing: border-box;
+      width: 50%;
+      &:nth-child(even) {
+        padding-left: 0.5rem;
+      }
+      &:nth-child(odd) {
+        padding-right: 0.5rem;
+      }
+      .form-control  {
+        &[type="text"], &[type="number"] {
+          box-sizing: border-box;
+          height: 36px;
+        }
+      }
+      //flex: 1;
+    }
+  }
+}
+
+.modal-footer {
+  .btn {
+    width: 100%;
   }
 }

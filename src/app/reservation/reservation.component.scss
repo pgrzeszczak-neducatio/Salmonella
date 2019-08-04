@@ -41,14 +41,19 @@ $hoursTo: 18;
   .reservation-description {
     position: absolute;
     bottom: 0;
-    padding: 1rem;
+    padding: 1.5rem;
   }
   h6 {
     font-weight: 800;
+    text-transform: uppercase;
   }
   h6, p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
+    line-height: 1.5rem;
+  }
+  p {
+    font-size: 1.4rem;
   }
   &.color-1 {
     background: #d44c85;

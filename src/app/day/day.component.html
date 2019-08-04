@@ -2,6 +2,6 @@
   <div class="day-header">{{day.label}}</div>
   <div class="day-column">
     <reservation *ngFor="let reservation of day.reservations" [reservation]="reservation"></reservation>
-    <div class="day-row" *ngFor="let slot of slots"></div>
+    <div class="day-row" (click)="addReservation(slot)" *ngFor="let slot of slots"></div>
   </div>
 </div>

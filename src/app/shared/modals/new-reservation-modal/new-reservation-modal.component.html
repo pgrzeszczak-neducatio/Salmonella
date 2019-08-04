@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h3 class="modal-title">New reservation!</h3>
+  <h3 class="modal-title">New reservation</h3>
   <button type="button" class="close" (click)="activeModal.dismiss()">&times;</button>
 </div>
 <div class="modal-body">
@@ -20,15 +20,15 @@
     </div>
     <div class="form-group">
       <label>Duration</label>
-      <input type="number" formControlName="lasts">
+      <input class="form-control" type="number" formControlName="lasts">
     </div>
     <div class="form-group">
       <label>Owner</label>
-      <input type="text" formControlName="owner">
+      <input class="form-control" type="text" formControlName="owner">
     </div>
     <div class="form-group">
       <label>Name</label>
-      <input type="text" formControlName="name">
+      <input class="form-control" type="text" formControlName="name">
     </div>
     <div class="form-group">
       <label>Color</label>
@@ -38,14 +38,14 @@
                  formControlName="color">
         <ng-template ng-label-tmp let-item="item">
           <span>
-            {{ item.label }}
             <div class="colorPreview" [ngClass]="item.cssClass"></div>
+            {{ item.label }}
           </span>
         </ng-template>
         <ng-template ng-option-tmp let-item="item">
           <span>
-            {{ item.label }}
             <div class="colorPreview" [ngClass]="item.cssClass"></div>
+            {{ item.label }}
           </span>
         </ng-template>
       </ng-select>
@@ -53,5 +53,5 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark btn-lg" (click)="submit()">Submit</button>
+  <button type="button" class="btn btn-primary btn-lg" (click)="submit()">Save reservation</button>
 </div>

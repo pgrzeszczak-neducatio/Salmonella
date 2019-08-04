@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewReservationModalComponent } from './shared/modals/new-reservation-modal/new-reservation-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { WeekActionsComponent } from './week-actions/week-actions.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     DayComponent,
     ReservationComponent,
     NewReservationModalComponent,
+    WeekActionsComponent,
   ],
   imports: [
     BrowserModule,

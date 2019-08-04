@@ -6,3 +6,26 @@ html, body {
 }
 
 @import "~@ng-select/ng-select/themes/default.theme.css";
+
+.btn {
+  &.btn-primary {
+    background: #adefda;
+    border-radius: 0.5rem;
+    border: 0;
+    border-bottom: 2px solid #46c59d;
+    color: #000;
+    display: inline-block;
+    font-weight: 600;
+    outline: none;
+    padding: 1.5rem 4rem;
+    &:hover, &:active, &:focus {
+      background-color: #46c59d !important;
+      border-color: #46c59d !important;
+      box-shadow: none !important;
+      color: #fff;
+    }
+    &:hover {
+      box-shadow: 0 10px 20px -17px #777;
+    }
+  }
+}

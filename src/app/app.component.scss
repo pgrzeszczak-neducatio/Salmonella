@@ -2,12 +2,16 @@
   padding-top: 2rem;
 }
 .main-header {
-  overflow: auto;
+  display: flex;
+  align-items: center;
+  .actions {
+    flex: 1;
+    text-align: right;
+  }
   .logo {
     background: url(../assets/logo.png) no-repeat;
     font-size: 3rem;
     font-weight: 800;
-    float: left;
     padding: 5rem 4rem;
     text-transform: uppercase;
     h4 {
