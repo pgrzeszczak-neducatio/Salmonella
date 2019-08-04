@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReservationsService } from '../shared/services/reservations.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NewReservationModalComponent } from '../shared/modals/new-reservation-modal/new-reservation-modal.component';
 
 @Component({
   selector: 'week',
@@ -11,17 +13,23 @@ export class WeekComponent implements OnInit {
   public days: any = [];
   public slots: any = [];
 
-  constructor(private reservationsService: ReservationsService) {
+  constructor(private reservationsService: ReservationsService, private modalService: NgbModal) {
     for (let i = 7; i <= 18; i++) {
       this.slots.push({ hour: `${i}:00` });
     }
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.reservationsService.fetchReservations()
       .subscribe((days) => {
         this.days = days;
       });
+  }
+
+  public openModal() {
+    this.modalService.open(NewReservationModalComponent, {
+      centered: true,
+    });
   }
 
 }
