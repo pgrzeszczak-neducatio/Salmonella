@@ -48,4 +48,10 @@ export class ReservationsService {
   public addNewReservation(dayId: number, reservation: Reservation) {
     this.all.find(day => day.id === dayId).reservations.push(reservation);
   }
+
+  public removeReservation(reservation: Reservation) {
+    for (const day of this.all) {
+      day.reservations = day.reservations.filter(r => r !== reservation);
+    }
+  }
 }

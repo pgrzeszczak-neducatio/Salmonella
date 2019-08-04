@@ -1,4 +1,5 @@
 <div class="reservation" [ngClass]="reservationClasses">
+  <button (click)="removeReservation()">&times;</button>
   <div class="reservation-description">
     <h6>{{reservation.owner}}</h6>
     <p>{{reservation.name}}</p>
