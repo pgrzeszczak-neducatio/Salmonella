@@ -3,8 +3,55 @@
   <button type="button" class="close" (click)="activeModal.dismiss()">&times;</button>
 </div>
 <div class="modal-body">
-  TEST
+  <form [formGroup]="addNewForm">
+    <div class="form-group">
+      <label>Day</label>
+      <ng-select [items]="availableDays"
+                 bindLabel="label"
+                 bindValue="id"
+                 formControlName="day">
+      </ng-select>
+    </div>
+    <div class="form-group">
+      <label>Start hour</label>
+      <ng-select [items]="hours"
+                 formControlName="hour">
+      </ng-select>
+    </div>
+    <div class="form-group">
+      <label>Duration</label>
+      <input type="number" formControlName="lasts">
+    </div>
+    <div class="form-group">
+      <label>Owner</label>
+      <input type="text" formControlName="owner">
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label>Color</label>
+      <ng-select [items]="colors"
+                 bindLabel="label"
+                 bindValue="cssClass"
+                 formControlName="color">
+        <ng-template ng-label-tmp let-item="item">
+          <span>
+            {{ item.label }}
+            <div class="colorPreview" [ngClass]="item.cssClass"></div>
+          </span>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item">
+          <span>
+            {{ item.label }}
+            <div class="colorPreview" [ngClass]="item.cssClass"></div>
+          </span>
+        </ng-template>
+      </ng-select>
+    </div>
+  </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark btn-lg" (click)="activeModal.close()">Close</button>
+  <button type="button" class="btn btn-outline-dark btn-lg" (click)="submit()">Submit</button>
 </div>

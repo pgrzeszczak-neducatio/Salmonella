@@ -1,0 +1,15 @@
+.colorPreview {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+
+  &.color-1 {
+    background: #d44c85;
+  }
+  &.color-2 {
+    background: #46c59d;
+  }
+  &.color-3 {
+    background: #ffd060;
+  }
+}
