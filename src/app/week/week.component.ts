@@ -13,7 +13,7 @@ export class WeekComponent implements OnInit {
   public days: any = [];
   public slots: any = [];
 
-  constructor(private reservationsService: ReservationsService) {
+  constructor(private reservationsService: ReservationsService, private modalService: NgbModal) {
     for (let i = 7; i <= 18; i++) {
       this.slots.push({ hour: `${i}:00` });
     }
@@ -26,5 +26,11 @@ export class WeekComponent implements OnInit {
       });
   }
 
+  public addReservation({day, slot}) {
+    const modalRef = this.modalService.open(NewReservationModalComponent, {
+      centered: true,
+    });
+    modalRef.componentInstance.reservation = {day: day.id, hour: slot.hour};
+  }
 
 }

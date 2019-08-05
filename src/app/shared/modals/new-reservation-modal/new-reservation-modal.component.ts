@@ -17,7 +17,10 @@ export class NewReservationModalComponent implements OnInit {
   public hours: string[] = [];
   public colors: Color[] = [];
 
-  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, public reservationsService: ReservationsService) {
+  constructor(
+    public activeModal: NgbActiveModal,
+    private formBuilder: FormBuilder,
+    public reservationsService: ReservationsService) {
 
   }
 

@@ -4,5 +4,5 @@
       {{slot.hour}}
     </div>
   </div>
-  <day *ngFor="let day of days" [day]="day" [slots]="slots"></day>
+  <day *ngFor="let day of days" (slotClicked)="addReservation($event)" [day]="day" [slots]="slots"></day>
 </div>

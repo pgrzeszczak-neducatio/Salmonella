@@ -16,7 +16,7 @@ export class WeekActionsComponent implements OnInit {
   }
 
   public openModal() {
-    this.modalService.open(NewReservationModalComponent, {
+    const modalRef = this.modalService.open(NewReservationModalComponent, {
       centered: true,
     });
   }
